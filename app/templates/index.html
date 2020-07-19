@@ -1,0 +1,27 @@
+{%  extends "layout.html" %}
+{% block body %}
+<div class="index">
+
+  <p>Hi, Welcome to Mind</p>
+  <form action="{{url_for('index')}}" method="post">
+    {{ loginform.csrf_token }}
+
+    <div class="form-group">
+      {{ loginform.username.label }} {{ loginform.username(class="form-control")}}
+    </div> <!-- End of div.form-group -->
+
+    <div class="form-group">
+      {{ loginform.password.label}} {{ loginform.password(class="form-control")}}
+    </div> <!-- End if div.form-group -->
+
+    <button class="btn btn-primary">
+      Login
+    </button>
+  </form>
+
+  <div class="create-account">
+    <a  href="{{ url_for('register') }}">Create Account</a>
+  </div>  <!-- End of div.create-account -->
+
+</div> <!-- End of div.index -->
+{% endblock %}
